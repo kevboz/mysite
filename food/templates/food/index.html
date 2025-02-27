@@ -1,0 +1,49 @@
+
+{% extends "food/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Index</title>
+</head>
+<body>
+
+{% block body %}
+
+
+
+
+
+    
+    
+    {% for item in items %}
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                {% comment %} <img class="card" height="150px" src="{{item.item_image}}" alt="item image"/> {% endcomment %}
+            
+            </div>
+            <div class="col-md-4">
+            <h3>{{item.item_name}}</h3>
+            <h5>{{item.item_desc}}</h5>
+            <h5>${{item.item_price}}</h5>
+            </div>
+            <div class="col-md-1">
+                <a href="{% url 'food:detail' item.id %}" class="btn btn-success btn-primary">Details</a>
+            </div>
+            <div class="col-md-1">
+                <a href="{% url 'food:update-item' item.id %}" class="btn btn-success btn-primary">Edit</a>
+            </div>
+            <div class="col-md-1">
+                <a href="{% url 'food:delete-item' item.id %}" class="btn btn-success btn-primary">Delete</a>
+            </div>
+        </div>
+        
+
+        
+    {% endfor %}
+{% endblock %}
+
+
+
+
+</body>
+</html>
