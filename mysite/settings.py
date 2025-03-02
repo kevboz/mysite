@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'food.apps.FoodConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -116,9 +117,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#login_redirect_url = 'food:index' # need to be in uppercase
+LOGIN_REDIRECT_URL = 'food:index'
+LOGIN_URL = 'login' # override the default route for django
+
+MEDIA_ROOT = BASE_DIR / 'pictures'
+MEDIA_URL = '/pictures/'

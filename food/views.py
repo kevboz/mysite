@@ -65,3 +65,4 @@ def delete_item (request, item_id):
         return redirect('food:index')
     
     return render(request, 'food/confirm-delete.html', {'item': item})
+
