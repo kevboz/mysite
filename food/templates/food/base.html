@@ -17,7 +17,7 @@
     <a href="#" class="navbar-brand" >Food App</a>
 
     <div class="navbar">
-        <a class= href="#">Menu Item</a>
+        <a  href="{% url 'food:create-item' %}">Add Item</a>
         <a  href="#">Delete Item</a>
         <a  href="#">View Item</a>
         {% if user.is_authenticated %}
